@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+// apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 apply plugin: 'maven-publish'
 
@@ -17,12 +17,12 @@ bintray {
     key = bintray_key
     configurations = ['archives']
 
-    filesSpec {
-        from 'build/outputs/aar', 'build/poms', 'build/libs'
-        rename '.+\\.aar', artifactPrefix + '.aar'
-        rename 'pom-default\\.xml', artifactPrefix + '.pom'
-        into 'uk/co/lemberg/motiondetectionlib/' + version
-    }
+//    filesSpec {
+//        from 'build/outputs/aar', 'build/poms', 'build/libs'
+//        rename '.+\\.aar', artifactPrefix + '.aar'
+//        rename 'pom-default\\.xml', artifactPrefix + '.pom'
+//        into 'uk/co/lemberg/motiondetectionlib/' + version
+//    }
 
     pkg {
         repo = 'maven'
