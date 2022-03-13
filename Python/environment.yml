@@ -5,7 +5,7 @@ channels:
 dependencies:
     - python==3.5.2
     - numpy
-    - matplotlib
+    - matplotlib<=2.2.0
     - jupyter
     - opencv3
     - pillow
