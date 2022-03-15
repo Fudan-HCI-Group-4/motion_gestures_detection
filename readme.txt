@@ -1,0 +1,10 @@
+Environment
+use conda-forge/label/cf201901 (gcc leagcy problem)
+use conda to install moviepy
+matplotlib<=2.2.0
+pyqt4 not available on mac
+install tensorflow1.14.0 not 1.14.1
+use ubuntu16.04 docker to compile tensorflow (gcc version problem)
+
+Android app
+not available on Android 11
