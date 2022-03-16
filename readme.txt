@@ -8,3 +8,4 @@ use ubuntu16.04 docker to compile tensorflow (gcc version problem)
 
 Android app
 not available on Android 11
+should use local library, not the online one
