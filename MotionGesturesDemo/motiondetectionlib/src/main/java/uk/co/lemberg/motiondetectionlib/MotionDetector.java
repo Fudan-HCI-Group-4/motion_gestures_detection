@@ -151,18 +151,15 @@ public class MotionDetector {
 		}
 	};
 
-	private final Runnable recognitionRunnable = new Runnable() {
-		@Override
-		public void run() {
-			while (true) {
-				try {
-					recognSemaphore.acquire();
-					processData();
-					recognSemaphore.release();
-				}
-				catch (InterruptedException ignored) {
-					break;
-				}
+	private final Runnable recognitionRunnable = () -> {
+		while (true) {
+			try {
+				recognSemaphore.acquire();
+				processData();
+				recognSemaphore.release();
+			}
+			catch (InterruptedException ignored) {
+				break;
 			}
 		}
 	};
@@ -236,12 +233,9 @@ public class MotionDetector {
 	}
 
 	private void callListener(final GestureType gestureType) {
-		mainHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				try { listener.onGestureRecognized(gestureType); }
-				catch (Throwable ignored) {}
-			}
+		mainHandler.post(() -> {
+			try { listener.onGestureRecognized(gestureType); }
+			catch (Throwable ignored) {}
 		});
 	}
 
@@ -267,7 +261,7 @@ public class MotionDetector {
 	}
 
 
-	private static void filterData(float input[], float output[]) {
+	private static void filterData(float[] input, float[] output) {
 		Arrays.fill(output, 0);
 
 		float ir = 1.0f / FILTER_COEF;
