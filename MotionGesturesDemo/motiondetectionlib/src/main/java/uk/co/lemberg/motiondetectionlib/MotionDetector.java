@@ -206,17 +206,17 @@ public class MotionDetector {
 	private GestureType gestureType = null;
 	private boolean gestureRecognized = false;
 
-	private void detectGestures(float leftProb, float rightProb) {
+	private void detectGestures(float...prob) {
 		if (gestureStartTime == -1) {
 			// not recognized yet
-			if (getHighestProb(leftProb, rightProb) >= RISE_THRESHOLD) {
+			if (getHighestProb(prob) >= RISE_THRESHOLD) {
 				gestureStartTime = SystemClock.elapsedRealtimeNanos();
-				gestureType = getGestureType(leftProb, rightProb);
+				gestureType = getGestureType(prob);
 			}
 		}
 		else {
-			GestureType currType = getGestureType(leftProb, rightProb);
-			if ((currType != gestureType) || (getHighestProb(leftProb, rightProb) < FALL_THRESHOLD)) {
+			GestureType currType = getGestureType(prob);
+			if ((currType != gestureType) || (getHighestProb(prob) < FALL_THRESHOLD)) {
 				// reset
 				gestureStartTime = -1;
 				gestureType = null;
@@ -245,12 +245,25 @@ public class MotionDetector {
 		});
 	}
 
-	private static float getHighestProb(float leftProb, float rightProb) {
-		return Math.max(leftProb, rightProb);
+	private static float getHighestProb(float...prob) {
+		float ret = prob[0];
+		for (int i = 1; i < prob.length; ++i) {
+			ret = Math.max(prob[i], ret);
+		}
+		return ret;
 	}
 
-	private static GestureType getGestureType(float leftProb, float rightProb) {
-		return (leftProb > RISE_THRESHOLD) ? GestureType.MoveLeft : GestureType.MoveRight;
+	private static GestureType getGestureType(float...prob) {
+		float mx = Float.NEGATIVE_INFINITY;
+		GestureType ret = null;
+		for (GestureType gesture :GestureType.values()) {
+			if (prob[gesture.ordinal()] > mx) {
+				mx = prob[gesture.ordinal()];
+				ret =gesture;
+			}
+		}
+		return ret;
+		// return (prob[0] > RISE_THRESHOLD) ? GestureType.MoveLeft : GestureType.MoveRight;
 	}
 
 
