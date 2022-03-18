@@ -18,15 +18,17 @@ import java.util.concurrent.Semaphore;
 public class MotionDetector {
 
 	public enum GestureType {
+		MoveForward,
 		MoveLeft,
-		MoveRight
+		MoveRight,
+		MoveAround,
 	}
 
 	public interface Listener {
-		void onGestureRecognized(GestureType gestureType);
+		void onGestureRecognized(GestureType gestureType, float outputScores[]);
 	}
 
-	private static final String MODEL_FILENAME = "file:///android_asset/frozen_optimized_quant.pb";
+	private static final String MODEL_FILENAME = "file:///android_asset/frozen_optimized_quant_new.pb";
 
 	private static final int GESTURE_DURATION_MS = 1280000; // 1.28 sec
 	private static final int GESTURE_SAMPLES = 128;
@@ -36,7 +38,7 @@ public class MotionDetector {
 	private static final String[] OUTPUT_NODES = new String[]{OUTPUT_NODE};
 	private static final int NUM_CHANNELS = 2;
 	private static final long[] INPUT_SIZE = {1, GESTURE_SAMPLES, NUM_CHANNELS};
-	private static final String[] labels = new String[]{"Right", "Left"};
+	private static final String[] labels = new String[]{"Forward", "Left", "Right", "Around"};
 
 	private static final float DATA_NORMALIZATION_COEF = 9f;
 	private static final int FILTER_COEF = 20;
@@ -180,6 +182,7 @@ public class MotionDetector {
 		inferenceInterface.run(OUTPUT_NODES);
 		inferenceInterface.fetch(OUTPUT_NODE, outputScores);
 
+		/*
 		// there values are mutually exclusive (i.e. leftProbability + rightProbability = 1)
 		float leftProbability = outputScores[0]; // 0..1
 		float rightProbability = outputScores[1]; // 0..1
@@ -191,12 +194,13 @@ public class MotionDetector {
 		rightProbability -= 0.50; // -0.50..0.50
 		rightProbability *= 2; // -1..1
 		if (rightProbability < 0) rightProbability = 0;
+		 */
 
-		detectGestures(leftProbability, rightProbability);
+		detectGestures(outputScores);
 	}
 
 	private static final float RISE_THRESHOLD = 0.99f;
-	private static final float FALL_THRESHOLD = 0.9f;
+	private static final float FALL_THRESHOLD = 0.90f;
 	private static final long MIN_GESTURE_TIME_MS = 400000; // 0.4 sec - the minimum duration of recognized positive signal to be treated as a gesture
 	//private static final long GESTURES_DELAY_TIME_MS = 1000000; // 1.0 sec - minimum delay between two gestures
 	private long gestureStartTime = -1;
@@ -225,17 +229,21 @@ public class MotionDetector {
 					long gestureTimeMs = (SystemClock.elapsedRealtimeNanos() - gestureStartTime) / 1000;
 					if (gestureTimeMs > MIN_GESTURE_TIME_MS) {
 						gestureRecognized = true;
-						callListener(gestureType);
+						callListener(gestureType, outputScores);
 					}
 				}
 			}
 		}
 	}
 
-	private void callListener(final GestureType gestureType) {
-		mainHandler.post(() -> {
-			try { listener.onGestureRecognized(gestureType); }
-			catch (Throwable ignored) {}
+
+	private void callListener(final GestureType gestureType, float outputScores[]) {
+		mainHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				try { listener.onGestureRecognized(gestureType, outputScores); }
+				catch (Throwable ignored) {}
+			}
 		});
 	}
 
