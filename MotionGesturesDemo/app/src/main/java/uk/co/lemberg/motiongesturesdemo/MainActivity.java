@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,21 +51,18 @@ public class MainActivity extends AppCompatActivity {
 		MenuItem switchItem = menu.findItem(R.id.actionSwitch);
 
 		SwitchCompat switchActionBar = switchItem.getActionView().findViewById(R.id.switchActionBar);
-		switchActionBar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (isChecked) {
-					try {
-						motionDetector.start();
-					}
-					catch (Exception e) {
-						e.printStackTrace();
-						showToast("Failed to start motion detector. Error:" + e);
-					}
+		switchActionBar.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			if (isChecked) {
+				try {
+					motionDetector.start();
 				}
-				else {
-					motionDetector.stop();
+				catch (Exception e) {
+					e.printStackTrace();
+					showToast("Failed to start motion detector. Error:" + e);
 				}
+			}
+			else {
+				motionDetector.stop();
 			}
 		});
 
