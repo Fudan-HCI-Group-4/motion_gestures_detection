@@ -25,7 +25,7 @@ public class MotionDetector {
 	}
 
 	public interface Listener {
-		void onGestureRecognized(GestureType gestureType, float outputScores[]);
+		void onGestureRecognized(GestureType gestureType, float[] outputScores);
 	}
 
 	private static final String MODEL_FILENAME = "file:///android_asset/frozen_optimized_quant_new.pb";
@@ -237,13 +237,10 @@ public class MotionDetector {
 	}
 
 
-	private void callListener(final GestureType gestureType, float outputScores[]) {
-		mainHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				try { listener.onGestureRecognized(gestureType, outputScores); }
-				catch (Throwable ignored) {}
-			}
+	private void callListener(final GestureType gestureType, float[] outputScores) {
+		mainHandler.post(() -> {
+			try { listener.onGestureRecognized(gestureType, outputScores); }
+			catch (Throwable ignored) {}
 		});
 	}
 
