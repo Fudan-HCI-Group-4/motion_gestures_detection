@@ -37,7 +37,7 @@ public class MotionDetector {
 	private static final String[] OUTPUT_NODES = new String[]{OUTPUT_NODE};
 	private static final int NUM_CHANNELS = 2;
 	private static final long[] INPUT_SIZE = {1, GESTURE_SAMPLES, NUM_CHANNELS};
-	private static final String[] labels = new String[]{"Right", "Left", "Clockwise"};
+	private static final String[] labels = new String[GestureType.values().length];
 
 	private static final float DATA_NORMALIZATION_COEF = 9f;
 	private static final int FILTER_COEF = 20;
@@ -182,22 +182,17 @@ public class MotionDetector {
 		inferenceInterface.fetch(OUTPUT_NODE, outputScores);
 
 		// there values are mutually exclusive (i.e. leftProbability + rightProbability = 1)
-		float leftProbability = outputScores[0]; // 0..1
-		float rightProbability = outputScores[1]; // 0..1
-		float clockwiseProbability = outputScores[2]; // 0..1
+		float[] probabilities = new float[outputScores.length];
+		System.arraycopy(outputScores, 0, probabilities, 0, outputScores.length); // 0..1
 
 		// convert into independent 0..1 values
-		leftProbability -= 0.50; // -0.50..0.50
-		leftProbability *= 2; // -1..1
-		if (leftProbability < 0) leftProbability = 0;
-		rightProbability -= 0.50; // -0.50..0.50
-		rightProbability *= 2; // -1..1
-		if (rightProbability < 0) rightProbability = 0;
-		clockwiseProbability -= 0.50; // -0.50..0.50
-		clockwiseProbability *= 2; // -1..1
-		if (clockwiseProbability < 0) clockwiseProbability = 0;
+		for (int i = 0; i < probabilities.length; ++i) {
+			probabilities[i] -= 0.50; // -0.50..0.50
+			probabilities[i] *= 2; // -1..1
+			if (probabilities[i] < 0) probabilities[i] = 0;
+		}
 
-		detectGestures(leftProbability, rightProbability, clockwiseProbability);
+		detectGestures(probabilities);
 	}
 
 	private static final float RISE_THRESHOLD = 0.99f;
