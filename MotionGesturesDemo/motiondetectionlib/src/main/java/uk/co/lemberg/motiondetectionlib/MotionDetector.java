@@ -18,6 +18,7 @@ import java.util.concurrent.Semaphore;
 public class MotionDetector {
 
 	public enum GestureType {
+		MoveClockwise,
 		MoveLeft,
 		MoveRight
 	}
@@ -36,7 +37,7 @@ public class MotionDetector {
 	private static final String[] OUTPUT_NODES = new String[]{OUTPUT_NODE};
 	private static final int NUM_CHANNELS = 2;
 	private static final long[] INPUT_SIZE = {1, GESTURE_SAMPLES, NUM_CHANNELS};
-	private static final String[] labels = new String[]{"Right", "Left"};
+	private static final String[] labels = new String[]{"Right", "Left", "Clockwise"};
 
 	private static final float DATA_NORMALIZATION_COEF = 9f;
 	private static final int FILTER_COEF = 20;
@@ -183,6 +184,7 @@ public class MotionDetector {
 		// there values are mutually exclusive (i.e. leftProbability + rightProbability = 1)
 		float leftProbability = outputScores[0]; // 0..1
 		float rightProbability = outputScores[1]; // 0..1
+		float clockwiseProbability = outputScores[2]; // 0..1
 
 		// convert into independent 0..1 values
 		leftProbability -= 0.50; // -0.50..0.50
@@ -191,8 +193,11 @@ public class MotionDetector {
 		rightProbability -= 0.50; // -0.50..0.50
 		rightProbability *= 2; // -1..1
 		if (rightProbability < 0) rightProbability = 0;
+		clockwiseProbability -= 0.50; // -0.50..0.50
+		clockwiseProbability *= 2; // -1..1
+		if (clockwiseProbability < 0) clockwiseProbability = 0;
 
-		detectGestures(leftProbability, rightProbability);
+		detectGestures(leftProbability, rightProbability, clockwiseProbability);
 	}
 
 	private static final float RISE_THRESHOLD = 0.99f;
