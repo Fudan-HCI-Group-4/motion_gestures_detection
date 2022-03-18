@@ -1,0 +1,427 @@
+XXX@XXX:~/XXX/motion_gestures_detection/Python$ conda env create -f environment.yml
+Warning: you have pip-installed dependencies in your environment file, but you do not list pip itself as one of your conda dependencies.  Conda may not use the correct pip to install your packages, and they may end up in the wrong place.  Please add an explicit pip dependency.  I'm adding one for you, but still nagging you.
+Collecting package metadata (repodata.json): done
+Solving environment: / 
+Found conflicts! Looking for incompatible packages.
+This can take several minutes.  Press CTRL-C to abort.
+failed                                                                                                               -  
+Solving environment: - 
+Found conflicts! Looking for incompatible packages.
+This can take several minutes.  Press CTRL-C to abort.
+failed                                                                                                               /  
+
+UnsatisfiableError: The following specifications were found to be incompatible with each other:
+
+Output in format: Requested package -> Available versions
+
+Package libgfortran5 conflicts for:
+seaborn -> scipy[version='>=1.0.1'] -> libgfortran5[version='>=9.3.0|>=9.4.0']
+scipy -> libgfortran-ng -> libgfortran5[version='10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|11.1.0|11.1.0|11.1.0|11.1.0|11.1.0|11.2.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.3.0.*|8.5.0|8.5.0|8.5.0|8.5.0|8.5.0|8.5.0|8.4.0.*',build='h0ffbd86_10|h62347ff_4|h62347ff_6|h62347ff_7|h62347ff_8|h62347ff_10|hb56cab1_4|hb56cab1_5|hb56cab1_6|hb56cab1_7|hb56cab1_8|hb56cab1_9|hb56cab1_10|h6c583b3_4|h6c583b3_5|h6c583b3_8|h5c6108e_8|h5c6108e_9|h5c6108e_11|h5c6108e_13|h5c6108e_12|h5c6108e_10|h6c583b3_7|h6c583b3_6|hb56cab1_13|hb56cab1_12|hb56cab1_11|h62347ff_13|h62347ff_12|h62347ff_11|h62347ff_9|h62347ff_5|h0ffbd86_13|h0ffbd86_12|h0ffbd86_11|h0ffbd86_9|h0ffbd86_8']
+scikit-image -> scipy[version='>=1.4.1'] -> libgfortran5[version='>=9.3.0|>=9.4.0']
+numpy -> libblas[version='>=3.8.0,<4.0a0'] -> libgfortran5[version='10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|10.3.0|11.1.0|11.1.0|11.1.0|11.1.0|11.1.0|11.2.0|11.2.0|11.2.0|11.2.0|11.2.0|11.2.0|>=9.3.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.4.0|9.3.0.*|8.5.0|8.5.0|8.5.0|8.5.0|8.5.0|8.5.0|8.4.0.*|>=9.4.0',build='h0ffbd86_10|h62347ff_4|h62347ff_6|h62347ff_7|h62347ff_8|h62347ff_10|hb56cab1_4|hb56cab1_5|hb56cab1_6|hb56cab1_7|hb56cab1_8|hb56cab1_9|hb56cab1_10|h6c583b3_4|h6c583b3_5|h6c583b3_8|h5c6108e_8|h5c6108e_9|h5c6108e_11|h5c6108e_13|h5c6108e_12|h5c6108e_10|h6c583b3_7|h6c583b3_6|hb56cab1_13|hb56cab1_12|hb56cab1_11|h62347ff_13|h62347ff_12|h62347ff_11|h62347ff_9|h62347ff_5|h0ffbd86_13|h0ffbd86_12|h0ffbd86_11|h0ffbd86_9|h0ffbd86_8']
+scikit-learn -> libcblas[version='>=3.8.0,<4.0a0'] -> libgfortran5[version='>=9.3.0|>=9.4.0']
+scipy -> libgfortran5[version='>=9.3.0|>=9.4.0']
+h5py -> hdf5[version='>=1.12.1,<1.12.2.0a0'] -> libgfortran5[version='>=10.3.0|>=9.4.0|>=9.3.0']
+
+Package pypy3.7 conflicts for:
+numpy -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+pillow -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+pip -> python[version='>=3.7'] -> pypy3.7[version='7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.7|>=7.3.5|>=7.3.3']
+pandas -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+jupyter -> pypy3.7[version='>=7.3.3|>=7.3.7']
+flask-socketio -> python[version='>=3.6'] -> pypy3.7[version='7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+scipy -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+numpy -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+scikit-learn -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+scikit-learn -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+pandas -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+imageio=2.1.2 -> numpy -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+eventlet -> greenlet[version='>=0.3'] -> pypy3.7[version='7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+jupyter -> ipykernel -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.4|>=7.3.5']
+matplotlib -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+scipy -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+seaborn -> statsmodels[version='>=0.8.0'] -> pypy3.7[version='7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.3|>=7.3.5|>=7.3.7|>=7.3.4']
+opencv3 -> numpy[version='>=1.10'] -> pypy3.7[version='>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+matplotlib -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+scikit-image -> pypy3.7[version='>=7.3.3|>=7.3.5|>=7.3.7']
+h5py -> numpy[version='>=1.21.4,<2.0a0'] -> pypy3.7[version='7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.3|>=7.3.4|>=7.3.5|>=7.3.7']
+scikit-image -> numpy[version='>=1.19.5,<2.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*|>=7.3.4']
+pillow -> python[version='>=3.7,<3.8.0a0'] -> pypy3.7[version='7.3.*|7.3.3.*|7.3.4.*|7.3.5.*|7.3.7.*']
+
+Package nomkl conflicts for:
+scikit-learn -> openblas[version='>=0.3.3,<0.3.4.0a0'] -> nomkl==3.0=0
+numpy -> openblas[version='>=0.3.3,<0.3.4.0a0'] -> nomkl==3.0=0
+scipy -> openblas[version='>=0.3.3,<0.3.4.0a0'] -> nomkl==3.0=0
+pandas -> numexpr[version='>=2.7.1'] -> nomkl
+
+Package libtiff conflicts for:
+pillow -> libtiff[version='4.*|4.0.*|>=4.0.10,<5.0a0|>=4.1.0,<5.0a0|>=4.2.0,<5.0a0|>=4.3.0,<5.0a0|>=4.0.9,<5.0a0|>=4.0.8,<4.0.10|>=4.0.3,<4.0.8|4.0.6|>=4.0.8,<5.0a0']
+opencv3 -> libtiff=4.0
+imageio=2.1.2 -> pillow -> libtiff[version='4.*|4.0.*|>=4.0.10,<5.0a0|>=4.1.0,<5.0a0|>=4.2.0,<5.0a0|>=4.3.0,<5.0a0|>=4.0.9,<5.0a0|>=4.0.8,<4.0.10|>=4.0.3,<4.0.8|4.0.6|>=4.0.8,<5.0a0']
+scikit-image -> pillow[version='>=6.1.0,!=7.1.0,!=7.1.1,!=8.3.0'] -> libtiff[version='4.*|4.0.*|>=4.0.10,<5.0a0|>=4.1.0,<5.0a0|>=4.2.0,<5.0a0|>=4.3.0,<5.0a0|>=4.0.9,<5.0a0|>=4.0.8,<4.0.10|>=4.0.3,<4.0.8|4.0.6|>=4.0.8,<5.0a0']
+pillow -> libwebp -> libtiff
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> libtiff[version='4.0.*|>=4.0.10,<5.0a0']
+
+Package six conflicts for:
+h5py -> unittest2 -> six[version='>=1.4']
+scipy -> mkl-service[version='>=2.3.0,<3.0a0'] -> six
+flask-socketio -> python-socketio[version='>=5.0.2'] -> six[version='>=1.9.0']
+eventlet -> six[version='>=1.10.0']
+scikit-learn -> mkl-service[version='>=2,<3.0a0'] -> six
+numpy -> mkl-service[version='>=2.3.0,<3.0a0'] -> six
+matplotlib -> cycler -> six[version='>=1.5']
+eventlet -> pyopenssl -> six[version='>=1.5.2']
+seaborn -> patsy -> six
+h5py -> six
+pandas -> python-dateutil[version='>=2.7.3'] -> six[version='>=1.5']
+scikit-image -> six[version='>=1.4|>=1.7.3']
+
+Package _openmp_mutex conflicts for:
+numpy -> libgcc-ng[version='>=10.3.0'] -> _openmp_mutex[version='*|>=4.5',build=*_llvm]
+matplotlib -> libgcc-ng[version='>=7.3.0'] -> _openmp_mutex[version='>=4.5']
+pandas -> libgcc-ng[version='>=9.4.0'] -> _openmp_mutex[version='>=4.5']
+scikit-image -> _openmp_mutex
+scikit-learn -> libgcc-ng[version='>=9.4.0'] -> _openmp_mutex[version='*|>=4.5',build=*_llvm]
+h5py -> libgcc-ng[version='>=9.4.0'] -> _openmp_mutex[version='>=4.5']
+pillow -> libgcc-ng[version='>=10.3.0'] -> _openmp_mutex[version='>=4.5']
+scikit-image -> libgcc-ng[version='>=9.4.0'] -> _openmp_mutex[version='>=4.5']
+ffmpeg -> libgcc-ng[version='>=10.3.0'] -> _openmp_mutex[version='>=4.5']
+scikit-learn -> _openmp_mutex
+scipy -> libgcc-ng[version='>=9.4.0'] -> _openmp_mutex[version='*|>=4.5',build=*_llvm]
+
+Package pandas conflicts for:
+seaborn -> pandas[version='>=0.14.0|>=0.22.0|>=0.23']
+pandas
+scikit-image -> networkx[version='>=2.2'] -> pandas[version='>=0.18.0|>=0.19.0|>=0.21.0|>=0.23.0|>=0.25.0|>=1.0|>=1.1']
+seaborn -> statsmodels[version='>=0.8.0'] -> pandas[version='>=0.14|>=0.21|>=1.0']
+
+Package __glibc conflicts for:
+pandas -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+ffmpeg -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+matplotlib -> libgcc-ng[version='>=7.3.0'] -> __glibc[version='>=2.17']
+pillow -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+scikit-learn -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+scikit-image -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+@/linux-64::__glibc==2.27=0
+h5py -> libgcc-ng[version='>=9.3.0'] -> __glibc[version='>=2.17']
+@|@/linux-64::__glibc==2.27=0
+scipy -> libgfortran-ng -> __glibc[version='>=2.17']
+
+Package gdbm conflicts for:
+matplotlib -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+numpy -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+scipy -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+eventlet -> pypy3.6[version='>=7.3.1'] -> gdbm[version='>=1.18,<1.19.0a0']
+pandas -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+jupyter -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+pillow -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+scikit-learn -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+scikit-image -> pypy3.7[version='>=7.3.7'] -> gdbm[version='>=1.18,<1.19.0a0']
+
+Package pyqt conflicts for:
+scikit-image -> matplotlib[version='>=2.0.0'] -> pyqt[version='4.11.*|5.*|5.9.*|>=5.12.3,<5.13.0a0|>=5.6.0,<5.7.0a0|>=5.9.2,<5.10.0a0|>=5.6,<6.0a0|5.6.*']
+matplotlib -> pyqt[version='4.11.*|>=5.12.3,<5.13.0a0|>=5.6.0,<5.7.0a0|>=5.9.2,<5.10.0a0|5.9.*|>=5.6,<6.0a0|5.*|5.6.*']
+jupyter -> qtconsole -> pyqt[version='4.11.*|5.6.*|>=5.6.0,<5.7.0a0|>=5.9.2,<5.10.0a0']
+pyqt=4.11.4
+seaborn -> matplotlib[version='>=2.1.2'] -> pyqt[version='4.11.*|5.*|5.9.*|>=5.12.3,<5.13.0a0|>=5.6.0,<5.7.0a0|>=5.9.2,<5.10.0a0|>=5.6,<6.0a0|5.6.*']
+
+Package pip conflicts for:
+scipy -> python[version='>=3.8,<3.9.0a0'] -> pip
+seaborn -> python[version='>=3.6'] -> pip
+imageio=2.1.2 -> python=3.6 -> pip
+scikit-image -> python[version='>=3.7,<3.8.0a0'] -> pip
+opencv3 -> python=3.5 -> pip
+pillow -> python[version='>=3.7,<3.8.0a0'] -> pip
+pyqt=4.11.4 -> python=3.6 -> pip
+matplotlib -> python[version='>=3.9,<3.10.0a0'] -> pip
+h5py -> python[version='>=3.10,<3.11.0a0'] -> pip
+jupyter -> python[version='>=3.7,<3.8.0a0'] -> pip
+pandas -> python[version='>=3.10,<3.11.0a0'] -> pip
+pip
+eventlet -> python[version='>=3.5'] -> pip
+flask-socketio -> python[version='>=3.6'] -> pip
+python==3.5.2 -> pip
+scikit-learn -> python[version='>=3.7,<3.8.0a0'] -> pip
+
+Package libffi conflicts for:
+numpy -> python[version='>=3.9,<3.10.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+scipy -> python[version='>=3.8,<3.9.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+opencv3 -> python=3.5 -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.2.1,<3.3a0|>=3.4.2,<3.5.0a0']
+jupyter -> python[version='>=3.7,<3.8.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+imageio=2.1.2 -> python=3.6 -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+flask-socketio -> python[version='>=3.6'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+eventlet -> python[version='>=3.5'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+scikit-image -> pypy3.7[version='>=7.3.7'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+pip -> python[version='>=3.7'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+scikit-learn -> pypy3.7[version='>=7.3.7'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+seaborn -> python[version='>=3.6'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+pillow -> pypy3.7[version='>=7.3.7'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+pyqt=4.11.4 -> python=3.6 -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+pandas -> python[version='>=3.10,<3.11.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+matplotlib -> python[version='>=3.9,<3.10.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+h5py -> python[version='>=3.10,<3.11.0a0'] -> libffi[version='3.2.*|>=3.2.1,<3.3.0a0|>=3.3,<3.4.0a0|>=3.4.2,<3.5.0a0|>=3.2.1,<3.3a0']
+
+Package numpy conflicts for:
+numpy
+matplotlib -> numpy[version='1.10.*|1.11.*|>=1.14.6,<2.0a0']
+pandas -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.11|>=1.11.*|>=1.12.1,<2.0a0|>=1.14.6,<2.0a0|>=1.15.4,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.17.5,<2.0a0|>=1.18.5,<2.0a0|>=1.19.5,<2.0a0|>=1.21.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.4,<2.0a0|>=1.19.2,<2.0a0|>=1.18.4,<2.0a0|>=1.18.1,<2.0a0|>=1.9.3,<2.0a0|>=1.9.*|>=1.9|>=1.8|>=1.7|>=1.21.2,<2.0a0|>=1.20.3,<2.0a0|>=1.20.2,<2.0a0|>=1.13.3,<2.0a0|>=1.11.3,<2.0a0']
+imageio=2.1.2 -> numpy
+seaborn -> numpy[version='>=1.13.3|>=1.9.3|>=1.15']
+scikit-learn -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.11.3,<2.0a0|>=1.14.6,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.17.5,<2.0a0|>=1.18.5,<2.0a0|>=1.19.5,<2.0a0|>=1.21.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.4,<2.0a0|>=1.19.2,<2.0a0|>=1.9.3,<2.0a0|>=1.9|>=1.21.2,<2.0a0']
+pandas -> bottleneck[version='>=1.3.1'] -> numpy[version='>=1.16.4,<2.0a0|>=1.21.3,<2.0a0']
+scikit-image -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.11|>=1.11.3,<2.0a0|>=1.14.6,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.17.5,<2.0a0|>=1.18.5,<2.0a0|>=1.19.5,<2.0a0|>=1.21.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.4,<2.0a0|>=1.19.2,<2.0a0|>=1.21.2,<2.0a0|>=1.9.3,<2.0a0|>=1.13.3,<2.0a0']
+scikit-image -> imageio[version='>=2.3.0'] -> numpy[version='>=1.10|>=1.10.4|>=1.11.0|>=1.11.3|>=1.15.1|>=1.18.1,<2.0a0|>=1.19|>=1.20.0|>=1.19.2|>=1.17|>=1.15.4,<2.0a0|>=1.8|>=1.9|>=1.15.1,<2.0a0|>=1.18|>=1.16|>=1.13.0']
+seaborn -> statsmodels[version='>=0.8.0'] -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.11.*|>=1.11.3,<2.0a0|>=1.11|>=1.14.6,<2.0a0|>=1.15.4,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.18.5,<2.0a0|>=1.21.5,<2.0a0|>=1.19.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.2,<2.0a0|>=1.18.1,<2.0a0|>=1.17.5,<2.0a0|>=1.9.3,<2.0a0|>=1.21.2,<2.0a0|>=1.17.0,<2.0a0|>=1.19.1,<2.0a0|>=1.17|>=1.19.4,<2.0a0|>=1.18.4,<2.0a0|>=1.12.1,<2.0a0|>=1.9.*|>=1.20.3,<2.0a0|>=1.20.2,<2.0a0|>=1.13.3,<2.0a0|>=1.9|>=1.15.1,<2.0a0|>=1.8|>=1.7|>=1.4.0']
+h5py -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.14.6,<2.0a0|>=1.16.5,<2.0a0|>=1.17.5,<2.0a0|>=1.18.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.5,<2.0a0|>=1.19.4,<2.0a0|>=1.16.6,<2.0a0|>=1.19.2,<2.0a0|>=1.9.3,<2.0a0|>=1.8|>=1.8,<1.14|>=1.21.2,<2.0a0|>=1.11.3,<2.0a0']
+scipy -> numpy[version='1.10.*|1.11.*|1.12.*|1.13.*|>=1.11|>=1.11.3,<2.0a0|>=1.14.6,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.17.5,<2.0a0|>=1.18.5,<2.0a0|>=1.19.5,<2.0a0|>=1.21.5,<2.0a0|>=1.21.4,<2.0a0|>=1.19.4,<2.0a0|>=1.19.2,<2.0a0|>=1.18.1,<2.0a0|>=1.9.3,<2.0a0|>=1.9|>=1.21.2,<2.0a0|>=1.15.1,<2.0a0']
+scikit-learn -> scipy -> numpy[version='>=1.11|>=1.18.1,<2.0a0|>=1.15.1,<2.0a0']
+opencv3 -> numpy[version='1.11.*|>=1.10']
+matplotlib -> matplotlib-base[version='>=3.5.1,<3.5.2.0a0'] -> numpy[version='>=1.11.3,<2.0a0|>=1.15.4,<2.0a0|>=1.16.5,<2.0a0|>=1.16.6,<2.0a0|>=1.17|>=1.19.5,<2.0a0|>=1.21.4,<2.0a0|>=1.18.5,<2.0a0|>=1.21.2,<2.0a0|>=1.19.2,<2.0a0|>=1.17.5,<2.0a0|>=1.19.4,<2.0a0|>=1.9.3,<2.0a0']
+
+Package bzip2 conflicts for:
+imageio=2.1.2 -> python=3.6 -> bzip2[version='>=1.0.6,<2.0a0']
+scikit-learn -> pypy3.7[version='>=7.3.7'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+pyqt=4.11.4 -> python=3.6 -> bzip2[version='>=1.0.6,<2.0a0']
+matplotlib -> python[version='>=3.9,<3.10.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+opencv3 -> python=3.5 -> bzip2[version='>=1.0.6,<2.0a0']
+pandas -> python[version='>=3.10,<3.11.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+numpy -> python[version='>=3.9,<3.10.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+h5py -> python[version='>=3.10,<3.11.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+pip -> python[version='>=3.7'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+scipy -> python[version='>=3.8,<3.9.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+scikit-image -> pypy3.7[version='>=7.3.7'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+jupyter -> python[version='>=3.7,<3.8.0a0'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+seaborn -> python[version='>=3.6'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+ffmpeg -> bzip2[version='1.0.*|>=1.0.6,<1.1.0a0|>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+eventlet -> python[version='>=3.5'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+flask-socketio -> python[version='>=3.6'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+pillow -> pypy3.7[version='>=7.3.7'] -> bzip2[version='>=1.0.6,<2.0a0|>=1.0.8,<2.0a0']
+
+Package expat conflicts for:
+pandas -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+pillow -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+scikit-image -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> expat[version='>=2.2.5,<3.0.0a0']
+numpy -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+scikit-learn -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.4.1,<3.0a0|>=2.3.0,<3.0a0']
+scipy -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+matplotlib -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+eventlet -> pypy3.6[version='>=7.3.1'] -> expat[version='>=2.2.9,<3.0.0a0']
+jupyter -> pypy3.7[version='>=7.3.7'] -> expat[version='>=2.2.9,<3.0.0a0|>=2.3.0,<3.0a0|>=2.4.1,<3.0a0']
+
+Package libgcc conflicts for:
+matplotlib -> pyqt -> libgcc
+scikit-image -> scipy[version='>=0.17'] -> libgcc
+scikit-learn -> scipy -> libgcc
+scipy -> libgcc
+seaborn -> scipy[version='>=0.15.2'] -> libgcc
+
+Package certifi conflicts for:
+matplotlib -> matplotlib-base[version='>=3.5.1,<3.5.2.0a0'] -> certifi[version='>=2016.09|>=2016.9.26|>=2020.06.20']
+seaborn -> matplotlib-base[version='>=2.1.2'] -> certifi[version='>=2020.06.20']
+pandas -> setuptools[version='<60.0.0'] -> certifi[version='>=2016.09|>=2016.9.26']
+pip -> setuptools -> certifi[version='>=2016.09|>=2016.9.26']
+scikit-image -> matplotlib-base[version='>=2.0.0'] -> certifi[version='>=2020.06.20']
+
+Package xz conflicts for:
+ffmpeg -> libxml2[version='>=2.9.12,<2.10.0a0'] -> xz[version='>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0']
+scikit-learn -> pypy3.7[version='>=7.3.7'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+python==3.5.2 -> xz[version='5.0.*|5.2.*']
+pillow -> libtiff[version='>=4.3.0,<5.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+matplotlib -> python[version='>=3.9,<3.10.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+jupyter -> python[version='>=3.7,<3.8.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+pyqt=4.11.4 -> python=3.6 -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+pandas -> python[version='>=3.10,<3.11.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+eventlet -> python[version='>=3.5'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+opencv3 -> libtiff=4.0 -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0|>=5.2.5,<6.0a0|>=5.2.5,<5.3.0a0']
+h5py -> python[version='>=3.10,<3.11.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+numpy -> python[version='>=3.9,<3.10.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+pip -> python[version='>=3.7'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+scipy -> python[version='>=3.8,<3.9.0a0'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+seaborn -> python[version='>=3.6'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+imageio=2.1.2 -> python=3.6 -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+scikit-image -> pypy3.7[version='>=7.3.7'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+flask-socketio -> python[version='>=3.6'] -> xz[version='5.0.*|5.2.*|>=5.2.3,<5.3.0a0|>=5.2.4,<5.3.0a0|>=5.2.5,<5.3.0a0|>=5.2.5,<6.0a0|>=5.2.4,<6.0a0|>=5.2.3,<6.0a0']
+
+Package futures conflicts for:
+scikit-image -> imageio[version='>=2.3.0'] -> futures
+matplotlib -> tornado -> futures
+
+Package pypy3.6 conflicts for:
+pandas -> numpy[version='>=1.19.5,<2.0a0'] -> pypy3.6[version='7.3.*|7.3.0.*|7.3.1.*|7.3.2.*|7.3.3.*|>=7.3.3']
+pandas -> pypy3.6[version='>=7.3.1|>=7.3.2']
+
+Package enum34 conflicts for:
+scikit-image -> imageio[version='>=2.3.0'] -> enum34
+eventlet -> enum34
+matplotlib -> pyqt -> enum34
+
+Package libgcc-ng conflicts for:
+pandas -> numpy[version='>=1.21.5,<2.0a0'] -> libgcc-ng[version='>=10.3.0']
+pandas -> libgcc-ng[version='>=4.9|>=7.3.0|>=7.5.0|>=9.3.0|>=9.4.0|>=7.2.0']
+
+Package gmp conflicts for:
+scipy -> libgcc -> gmp[version='>=4.2']
+ffmpeg -> gnutls=3.5 -> gmp=6.1
+ffmpeg -> gmp[version='>=6.1.2|>=6.1.2,<7.0a0|>=6.2.0,<7.0a0|>=6.2.1,<7.0a0']
+
+Package libpng conflicts for:
+seaborn -> matplotlib-base[version='>=2.1.2'] -> libpng[version='>=1.6.23,<1.7|>=1.6.32,<1.7.0a0|>=1.6.34,<1.7.0a0|>=1.6.35,<1.7.0a0|>=1.6.37,<1.7.0a0|>=1.6.36,<1.7.0a0']
+scikit-image -> matplotlib-base[version='>=2.0.0'] -> libpng[version='>=1.6.23,<1.7|>=1.6.32,<1.7.0a0|>=1.6.34,<1.7.0a0|>=1.6.35,<1.7.0a0|>=1.6.37,<1.7.0a0|>=1.6.36,<1.7.0a0']
+ffmpeg -> freetype[version='>=2.10.4,<3.0a0'] -> libpng[version='>=1.6.32,<1.6.35|>=1.6.34,<1.7.0a0|>=1.6.35,<1.7.0a0|>=1.6.37,<1.7.0a0|>=1.6.32,<1.7.0a0']
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> libpng[version='>=1.6.28,<1.7|>=1.6.36,<1.7.0a0']
+pillow -> freetype[version='>=2.10.4,<3.0a0'] -> libpng[version='1.6.*|>=1.6.21,<1.7|>=1.6.22,<1.6.31|>=1.6.32,<1.6.35|>=1.6.32,<1.7.0a0|>=1.6.34,<1.7.0a0|>=1.6.35,<1.7.0a0|>=1.6.37,<1.7.0a0|>=1.6.28,<1.7|>=1.6.23,<1.7']
+matplotlib -> freetype=2.6 -> libpng[version='1.6.*|>=1.6.21,<1.7|>=1.6.32,<1.6.35']
+matplotlib -> libpng[version='>=1.6.23,<1.7|>=1.6.37,<1.7.0a0|>=1.6.36,<1.7.0a0|>=1.6.35,<1.7.0a0|>=1.6.34,<1.7.0a0|>=1.6.32,<1.7.0a0']
+opencv3 -> libpng[version='>=1.6.23,<1.7']
+
+Package matplotlib conflicts for:
+scikit-image -> matplotlib[version='>=1.1|>=1.3.1|>=2.0.0']
+matplotlib
+scikit-image -> networkx[version='>=2.2'] -> matplotlib[version='>=3.3']
+seaborn -> matplotlib[version='>=1.4.3|>=2.1.2|>=2.2']
+
+Package scipy conflicts for:
+seaborn -> scipy[version='>=0.15.2|>=1.0.1|>=1.0']
+scikit-image -> scipy[version='>=0.17|>=0.19|>=1.4.1|>=0.9|>=1.0.1']
+seaborn -> statsmodels[version='>=0.8.0'] -> scipy[version='>=0.14|>=1.2|>=1.3']
+scipy
+scikit-image -> networkx[version='>=2.2'] -> scipy[version='>=1.5,!=1.6.1']
+scikit-learn -> scipy[version='>=0.19.1|>=1.1.0']
+
+Package libgomp conflicts for:
+scikit-learn -> _openmp_mutex -> libgomp[version='>=7.3.0|>=7.5.0']
+scikit-image -> _openmp_mutex -> libgomp[version='>=7.3.0|>=7.5.0']
+
+Package libxcb conflicts for:
+imageio=2.1.2 -> pillow -> libxcb[version='>=1.13,<1.14.0a0']
+pillow -> libxcb[version='>=1.13,<1.14.0a0']
+scikit-image -> pillow[version='>=6.1.0,!=7.1.0,!=7.1.1,!=8.3.0'] -> libxcb[version='>=1.13,<1.14.0a0']
+
+Package tzdata conflicts for:
+scikit-image -> python[version='>=3.10,<3.11.0a0'] -> tzdata
+jupyter -> python[version='>=3.9,<3.10.0a0'] -> tzdata
+matplotlib -> python[version='>=3.9,<3.10.0a0'] -> tzdata
+h5py -> python[version='>=3.10,<3.11.0a0'] -> tzdata
+pandas -> python[version='>=3.10,<3.11.0a0'] -> tzdata
+flask-socketio -> python[version='>=3.6'] -> tzdata
+numpy -> python[version='>=3.9,<3.10.0a0'] -> tzdata
+pillow -> python[version='>=3.10,<3.11.0a0'] -> tzdata
+pip -> python[version='>=3.7'] -> tzdata
+scipy -> python[version='>=3.9,<3.10.0a0'] -> tzdata
+scikit-learn -> python[version='>=3.10,<3.11.0a0'] -> tzdata
+seaborn -> python[version='>=3.6'] -> tzdata
+eventlet -> python[version='>=3.5'] -> tzdata
+
+Package jinja2 conflicts for:
+scikit-image -> dask[version='>=0.5'] -> jinja2
+flask-socketio -> flask[version='>=0.9'] -> jinja2[version='>=2.10|>=2.10.1|>=2.10.1,<3.0|>=3.0|>=2.4']
+jupyter -> nbconvert -> jinja2[version='>=2.4']
+
+Package llvm-openmp conflicts for:
+scipy -> blas=[build=openblas] -> llvm-openmp[version='>=10.0.0|>=11.0.0|>=11.0.1|>=11.1.0|>=12.0.1|>=9.0.1|>=10.0.1']
+scikit-image -> _openmp_mutex -> llvm-openmp[version='>=9.0.1']
+scikit-learn -> _openmp_mutex -> llvm-openmp[version='>=10.0.0|>=11.0.0|>=11.0.1|>=11.1.0|>=12.0.1|>=9.0.1|>=10.0.1']
+numpy -> openblas[version='>=0.2.15'] -> llvm-openmp[version='>=10.0.0|>=10.0.1|>=11.0.0|>=11.1.0|>=12.0.1|>=9.0.1|>=11.0.1']
+
+Package freetype conflicts for:
+seaborn -> matplotlib-base[version='>=2.1.2'] -> freetype[version='2.6.*|>=2.10.2,<3.0a0|>=2.10.4,<3.0a0|>=2.9.1,<3.0a0|>=2.11.0,<3.0a0|>=2.3|>=2.8,<2.9.0a0']
+scikit-image -> pillow[version='>=6.1.0,!=7.1.0,!=7.1.1,!=8.3.0'] -> freetype[version='2.5.*|2.6.*|2.7|2.8.*|2.8.1|2.8.1.*|>=2.10.2,<3.0a0|>=2.10.3,<3.0a0|>=2.10.4,<3.0a0|>=2.9.1,<3.0a0|>=2.11.0,<3.0a0|>=2.3|>=2.8.1,<2.9.0a0|>=2.8,<2.9.0a0|2.7|2.7.*']
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> freetype[version='2.7|2.7.*']
+ffmpeg -> freetype[version='2.8.1|2.8.1.*|>=2.10.4,<3.0a0|>=2.9.1,<3.0a0|>=2.8.1,<2.9.0a0|>=2.8.1,<2.8.2.0a0|>=2.8,<2.9.0a0']
+matplotlib -> freetype[version='2.6.*|>=2.9.1,<3.0a0|>=2.8,<2.9.0a0']
+matplotlib -> matplotlib-base[version='>=3.5.1,<3.5.2.0a0'] -> freetype[version='>=2.10.2,<3.0a0|>=2.10.4,<3.0a0|>=2.11.0,<3.0a0|>=2.3']
+pillow -> freetype[version='2.5.*|2.6.*|2.7|2.7.*|2.7|2.8.*|2.8.1|2.8.1.*|>=2.10.4,<3.0a0|>=2.9.1,<3.0a0|>=2.8.1,<2.9.0a0|>=2.10.3,<3.0a0|>=2.8,<2.9.0a0']
+imageio=2.1.2 -> pillow -> freetype[version='2.5.*|2.6.*|2.7|2.7.*|2.7|2.8.*|2.8.1|2.8.1.*|>=2.10.4,<3.0a0|>=2.9.1,<3.0a0|>=2.8.1,<2.9.0a0|>=2.10.3,<3.0a0|>=2.8,<2.9.0a0']
+
+Package pytz conflicts for:
+scikit-image -> matplotlib-base[version='>=2.0.0'] -> pytz
+seaborn -> matplotlib-base[version='>=2.1.2'] -> pytz[version='>=2017.2|>=2020.1|>=2017.3']
+matplotlib -> pytz
+pandas -> pytz[version='>=2017.2|>=2020.1|>=2017.3']
+
+Package numexpr conflicts for:
+seaborn -> pandas[version='>=0.22.0'] -> numexpr[version='>=2.6.8|>=2.7.0|>=2.7.1']
+pandas -> numexpr[version='>=2.6.8|>=2.7.0|>=2.7.1']
+
+Package wheel conflicts for:
+python==3.5.2 -> pip -> wheel
+pip -> wheel
+
+Package xorg-libx11 conflicts for:
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> xorg-libx11
+ffmpeg -> libva[version='>=2.14.0,<3.0a0'] -> xorg-libx11
+
+Package icu conflicts for:
+matplotlib -> matplotlib-base[version='>=3.3.0,<3.3.1.0a0'] -> icu[version='>=64.2,<65.0a0|>=67.1,<68.0a0']
+matplotlib -> icu[version='>=58.2,<59.0a0']
+seaborn -> matplotlib-base[version='>=2.1.2'] -> icu[version='>=58.2,<59.0a0|>=64.2,<65.0a0|>=67.1,<68.0a0']
+pyqt=4.11.4 -> qt[version='>=4.8.6,<5.0'] -> icu=58
+ffmpeg -> libxml2[version='>=2.9.12,<2.10.0a0'] -> icu[version='>=58.2,<59.0a0|>=68.1,<69.0a0|>=69.1,<70.0a0']
+scikit-image -> matplotlib-base[version='>=2.0.0'] -> icu[version='>=58.2,<59.0a0|>=64.2,<65.0a0|>=67.1,<68.0a0']
+
+Package libstdcxx-ng conflicts for:
+pandas -> numpy[version='>=1.21.5,<2.0a0'] -> libstdcxx-ng[version='>=10.3.0']
+pandas -> libstdcxx-ng[version='>=4.9|>=7.3.0|>=7.5.0|>=9.3.0|>=9.4.0|>=7.2.0']
+
+Package liblapacke conflicts for:
+scipy -> blas=[build=openblas] -> liblapacke[version='3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0',build='4_mkl|5_mkl|6_mkl|9_mkl|10_mkl|20_mkl|21_mkl|5_mkl|6_mkl|7_mkl|8_mkl|9_mkl|10_mkl|11_linux64_mkl|2_openblas|5_openblas|6_openblas|13_openblas|16_openblas|17_openblas|5_openblas|6_openblas|10_openblas|11_linux64_openblas|12_linux64_openblas|13_linux64_openblas|9_openblas|8_openblas|7_openblas|15_openblas|14_openblas|12_openblas|11_openblas|10_openblas|9_openblas|8_openblas|7_openblas|4_openblas|3_openblas|0_openblas|13_linux64_mkl|12_linux64_mkl|19_mkl|18_mkl|16_mkl|15_mkl|14_mkl|13_mkl|12_mkl|11_mkl|8_mkl|7_mkl']
+numpy -> blas=[build=openblas] -> liblapacke[version='3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0',build='4_mkl|5_mkl|6_mkl|9_mkl|10_mkl|20_mkl|21_mkl|5_mkl|6_mkl|7_mkl|8_mkl|9_mkl|10_mkl|11_linux64_mkl|2_openblas|5_openblas|6_openblas|13_openblas|16_openblas|17_openblas|5_openblas|6_openblas|10_openblas|11_linux64_openblas|12_linux64_openblas|13_linux64_openblas|9_openblas|8_openblas|7_openblas|15_openblas|14_openblas|12_openblas|11_openblas|10_openblas|9_openblas|8_openblas|7_openblas|4_openblas|3_openblas|0_openblas|13_linux64_mkl|12_linux64_mkl|19_mkl|18_mkl|16_mkl|15_mkl|14_mkl|13_mkl|12_mkl|11_mkl|8_mkl|7_mkl']
+scikit-learn -> blas=[build=openblas] -> liblapacke[version='3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.8.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0|3.9.0',build='4_mkl|5_mkl|6_mkl|9_mkl|10_mkl|20_mkl|21_mkl|5_mkl|6_mkl|7_mkl|8_mkl|9_mkl|10_mkl|11_linux64_mkl|2_openblas|5_openblas|6_openblas|13_openblas|16_openblas|17_openblas|5_openblas|6_openblas|10_openblas|11_linux64_openblas|12_linux64_openblas|13_linux64_openblas|9_openblas|8_openblas|7_openblas|15_openblas|14_openblas|12_openblas|11_openblas|10_openblas|9_openblas|8_openblas|7_openblas|4_openblas|3_openblas|0_openblas|13_linux64_mkl|12_linux64_mkl|19_mkl|18_mkl|16_mkl|15_mkl|14_mkl|13_mkl|12_mkl|11_mkl|8_mkl|7_mkl']
+
+Package tornado conflicts for:
+jupyter -> ipykernel -> tornado[version='>=4|>=4,<6|>=4.0|>=4.2|>=4.2,<7.0|>=6.1|>=5.0|>=5.0,<7|>=4.1,<7']
+seaborn -> matplotlib-base[version='>=2.1.2'] -> tornado
+matplotlib -> tornado
+scikit-image -> matplotlib-base[version='>=2.0.0'] -> tornado
+
+Package qt conflicts for:
+matplotlib -> pyqt -> qt[version='4.8.*|5.6.*|5.9.*|>=5.12.5,<5.13.0a0|>=5.12.9,<5.13.0a0|>=5.9.7,<5.10.0a0|>=5.6.2,<5.7.0a0|>=4.8.6,<5.0|>=5.9.6,<5.10.0a0|>=5.9.4,<5.10.0a0|>=5.6.3,<5.7.0a0']
+pyqt=4.11.4 -> qt[version='4.8.*|>=4.8.6,<5.0']
+
+Package zstd conflicts for:
+opencv3 -> libtiff=4.0 -> zstd[version='>=1.3.3,<1.3.4.0a0|>=1.4.0,<1.5.0.0a0|>=1.4.3,<1.5.0.0a0|>=1.4.4,<1.5.0.0a0|>=1.3.7,<1.3.8.0a0']
+pillow -> libtiff[version='>=4.3.0,<5.0a0'] -> zstd[version='>=1.3.3,<1.3.4.0a0|>=1.3.7,<1.3.8.0a0|>=1.4.4,<1.5.0a0|>=1.4|>=1.4.3,<1.5.0.0a0|>=1.4.4,<1.5.0.0a0|>=1.4.5,<1.5.0a0|>=1.4.9,<1.5.0a0|>=1.5.0,<1.6.0a0|>=1.5.2,<1.6.0a0|>=1.4.0,<1.5.0.0a0']
+
+Package setuptools conflicts for:
+python==3.5.2 -> pip -> setuptools
+pip -> setuptools
+scikit-learn -> joblib[version='>=0.11'] -> setuptools
+scikit-image -> dask-core[version='>=1.0.0,!=2.17.0'] -> setuptools[version='<60.0.0']
+seaborn -> matplotlib-base[version='>=2.1.2'] -> setuptools[version='<60.0.0']
+pandas -> setuptools[version='<60.0.0']
+matplotlib -> setuptools
+pandas -> numexpr[version='>=2.7.1'] -> setuptools
+
+Package blis conflicts for:
+numpy -> libblas[version='>=3.8.0,<4.0a0'] -> blis[version='0.5.1.*|>=0.5.2,<0.5.3.0a0|>=0.6.0,<0.6.1.0a0|>=0.6.1,<0.6.2.0a0|>=0.7.0,<0.7.1.0a0|>=0.8.0,<0.8.1.0a0|>=0.8.1,<0.8.2.0a0']
+scipy -> libblas[version='>=3.8.0,<4.0a0'] -> blis[version='0.5.1.*|>=0.5.2,<0.5.3.0a0|>=0.6.0,<0.6.1.0a0|>=0.6.1,<0.6.2.0a0|>=0.7.0,<0.7.1.0a0|>=0.8.0,<0.8.1.0a0|>=0.8.1,<0.8.2.0a0']
+
+Package imageio conflicts for:
+imageio=2.1.2
+scikit-image -> imageio[version='>=2.1.0|>=2.3.0']
+
+Package pillow conflicts for:
+seaborn -> matplotlib-base[version='>=2.1.2'] -> pillow[version='>=6.2.0']
+pillow
+scikit-image -> imageio[version='>=2.3.0'] -> pillow[version='>=6.2.0|>=8.3.2']
+scikit-image -> pillow[version='>=1.7.8|>=2.1.0|>=4.3.0|>=4.3.0,!=8.3.0|>=6.1.0,!=7.1.0,!=7.1.1,!=8.3.0|>=4.3.0,!=7.1.0,!=7.1.1,!=8.3.0']
+matplotlib -> matplotlib-base[version='>=3.5.1,<3.5.2.0a0'] -> pillow[version='>=6.2.0']
+imageio=2.1.2 -> pillow
+
+Package hdf5 conflicts for:
+h5py -> hdf5[version='1.10.1|1.10.1.*|1.10.2.*|>=1.10.3,<1.10.4.0a0|>=1.10.4,<1.10.5.0a0|>=1.10.4,<1.10.5.0a0|>=1.10.4,<1.10.5.0a0|>=1.10.5,<1.10.6.0a0|>=1.10.5,<1.10.6.0a0|>=1.10.5,<1.10.6.0a0|>=1.10.6,<1.10.7.0a0|>=1.10.6,<1.10.7.0a0|>=1.10.6,<1.10.7.0a0|>=1.12.1,<1.12.2.0a0|>=1.10.2,<1.10.3.0a0|1.8.18|1.8.18.*|1.8.17|1.8.17.*|1.8.17.*|1.8.15.*|>=1.8.20,<1.9.0a0|>=1.8.18,<1.8.19.0a0|>=1.10.1,<1.10.2.0a0',build='mpi_mpich_*|mpi_mpich_*|mpi_openmpi_*|mpi_mpich_*|mpi_openmpi_*|mpi_mpich_*|mpi_openmpi_*|mpi_openmpi_*']
+opencv3 -> hdf5[version='1.8.17|1.8.17.*']
+
+Package python-dateutil conflicts for:
+matplotlib -> python-dateutil
+matplotlib -> matplotlib-base[version='>=3.5.1,<3.5.2.0a0'] -> python-dateutil[version='>=2.1|>=2.7']
+
+Package jpeg conflicts for:
+opencv3 -> libtiff=4.0 -> jpeg[version='>=9b,<10a|>=9c,<10a']
+opencv3 -> jpeg=9The following specifications were found to be incompatible with your CUDA driver:
+
+  - feature:/linux-64::__cuda==11.2=0
+  - feature:|@/linux-64::__cuda==11.2=0
+
+Your installed CUDA driver is: 11.2

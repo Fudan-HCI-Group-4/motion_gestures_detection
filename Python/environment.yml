@@ -1,11 +1,11 @@
 name: tensorflow14
 channels:
     - https://conda.anaconda.org/menpo
-    - conda-forge
+    - conda-forge/label/cf201901
 dependencies:
     - python==3.5.2
     - numpy
-    - matplotlib
+    - matplotlib<=2.2.0
     - jupyter
     - opencv3
     - pillow
@@ -20,6 +20,6 @@ dependencies:
     - ffmpeg
     - imageio=2.1.2
     - pyqt=4.11.4
+    - moviepy
     - pip:
-        - moviepy
         - tensorflow==1.4.0

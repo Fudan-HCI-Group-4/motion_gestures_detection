@@ -75,10 +75,13 @@ public class MainActivity extends AppCompatActivity {
 
 	private final MotionDetector.Listener gestureListener = new MotionDetector.Listener() {
 		@Override
-		public void onGestureRecognized(MotionDetector.GestureType gestureType) {
+		public void onGestureRecognized(MotionDetector.GestureType gestureType, float outputScores[]) {
 			showToast(gestureType.toString());
 			addLog("Gesture detected: " + gestureType);
 			Log.d(TAG, "Gesture detected: " + gestureType);
+
+			addLog(String.format("%f, %f, %f, %f\n", outputScores[0], outputScores[1], outputScores[2], outputScores[3]));
+			Log.d(TAG, String.format("%f, %f, %f, %f\n", outputScores[0], outputScores[1], outputScores[2], outputScores[3]));
 		}
 	};
 
