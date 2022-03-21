@@ -32,10 +32,10 @@
 
 ## Improvements
 - Consider 3 values of accelerometer: X, Y, Z, instead of only X and Y
-    - can recognize `MoveForward`
+    - Can recognize `MoveForward`
     - Improve stability
 - Add motion delay
-    - won't detect the same gesture in short periods
+    - Won't detect the same gesture in short periods
 - Improve logic
     - The former code outputs `MoveRight` if `MoveLeft` is under some threshold, which leads to many `MoveRight`s
     - We just find the maximum one, and leave the threshold judgement to other codes
