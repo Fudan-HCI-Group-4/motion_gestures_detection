@@ -27,7 +27,7 @@
 - Recognition creates a possibility output array
 - The detector detects a new gesture coming
     - by comparing the possibilities with threshold
-    - and judge if it is the same gesture in $1$ second
+    - and judge if it is the same gesture in 1 second
 - Find the most possible gesture and return
 
 ## Improvements
