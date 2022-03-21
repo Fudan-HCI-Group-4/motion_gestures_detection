@@ -15,7 +15,7 @@
 ## Model
 - Based on the article's model
 - Like image recognition
-- The input is treated as a 1 row * 128 columns * 3 channels image
+- The input is treated as a 1 row * 128 columns * 3 channels image (128 sample points, 3 axis of accelerometer)
 - Output is a vector of probabilities
 - Input data are collected manually
 
@@ -27,7 +27,7 @@
 - Recognition creates a possibility output array
 - The detector detects a new gesture coming
     - by comparing the possibilities with threshold
-    - and judge if it is the same gesture in 1 second
+    - and judge if it is the same gesture in a short period
 - Find the most possible gesture and return
 
 ## Improvements
