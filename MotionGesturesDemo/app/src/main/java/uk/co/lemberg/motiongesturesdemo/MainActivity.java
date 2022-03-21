@@ -7,12 +7,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import uk.co.lemberg.motiondetectionlib.MotionDetector;
@@ -52,37 +52,31 @@ public class MainActivity extends AppCompatActivity {
 		MenuItem switchItem = menu.findItem(R.id.actionSwitch);
 
 		SwitchCompat switchActionBar = switchItem.getActionView().findViewById(R.id.switchActionBar);
-		switchActionBar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (isChecked) {
-					try {
-						motionDetector.start();
-					}
-					catch (Exception e) {
-						e.printStackTrace();
-						showToast("Failed to start motion detector. Error:" + e);
-					}
+		switchActionBar.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			if (isChecked) {
+				try {
+					motionDetector.start();
 				}
-				else {
-					motionDetector.stop();
+				catch (Exception e) {
+					e.printStackTrace();
+					showToast("Failed to start motion detector. Error:" + e);
 				}
+			}
+			else {
+				motionDetector.stop();
 			}
 		});
 
 		return true;
 	}
 
-	private final MotionDetector.Listener gestureListener = new MotionDetector.Listener() {
-		@Override
-		public void onGestureRecognized(MotionDetector.GestureType gestureType, float outputScores[]) {
-			showToast(gestureType.toString());
-			addLog("Gesture detected: " + gestureType);
-			Log.d(TAG, "Gesture detected: " + gestureType);
+	private final MotionDetector.Listener gestureListener = (gestureType, outputScores) -> {
+		showToast(gestureType.toString());
+		addLog("Gesture detected: " + gestureType);
+		Log.d(TAG, "Gesture detected: " + gestureType);
 
-			addLog(String.format("%f, %f, %f, %f\n", outputScores[0], outputScores[1], outputScores[2], outputScores[3]));
-			Log.d(TAG, String.format("%f, %f, %f, %f\n", outputScores[0], outputScores[1], outputScores[2], outputScores[3]));
-		}
+		addLog(Arrays.toString(outputScores));
+		Log.d(TAG, Arrays.toString(outputScores));
 	};
 
 	private DateFormat getDateFormat() {
