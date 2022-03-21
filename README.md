@@ -43,11 +43,11 @@
     - More versatile (use variable arguments and loops)
     - New features (lambda expression)
 
-## Some tricks
+## Others
 - REALLY HARD to configure environments
     - Conda packages are outdated, add cf201901 label to conda-forge
     - TOO MANY env conflicts related to glibc, tensorflow, bazel, ...
 - Can't run on Android 11 due to conflicts between new features and library limits
 - Use local `motiondetectionlib` instead of the original one
 
-*It's not easy to be a system person*
+*It's not easy to be a system person. -- ryf*
