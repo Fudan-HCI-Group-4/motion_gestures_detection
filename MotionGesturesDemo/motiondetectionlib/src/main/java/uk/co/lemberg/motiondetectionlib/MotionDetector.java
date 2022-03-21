@@ -19,8 +19,8 @@ public class MotionDetector {
 
 	public enum GestureType {
 		MoveForward,
-		MoveLeft,
 		MoveRight,
+		MoveLeft,
 		MoveAround,
 	}
 
@@ -38,7 +38,7 @@ public class MotionDetector {
 	private static final String[] OUTPUT_NODES = new String[]{OUTPUT_NODE};
 	private static final int NUM_CHANNELS = 3;
 	private static final long[] INPUT_SIZE = {1, GESTURE_SAMPLES, NUM_CHANNELS};
-	private static final String[] labels = new String[]{"Forward", "Left", "Right", "Around"};
+	private static final String[] labels = new String[GestureType.values().length];
 
 	private static final float DATA_NORMALIZATION_COEF = 9f;
 	private static final int FILTER_COEF = 20;
@@ -182,20 +182,6 @@ public class MotionDetector {
 		inferenceInterface.run(OUTPUT_NODES);
 		inferenceInterface.fetch(OUTPUT_NODE, outputScores);
 
-		/*
-		// there values are mutually exclusive (i.e. leftProbability + rightProbability = 1)
-		float leftProbability = outputScores[0]; // 0..1
-		float rightProbability = outputScores[1]; // 0..1
-
-		// convert into independent 0..1 values
-		leftProbability -= 0.50; // -0.50..0.50
-		leftProbability *= 2; // -1..1
-		if (leftProbability < 0) leftProbability = 0;
-		rightProbability -= 0.50; // -0.50..0.50
-		rightProbability *= 2; // -1..1
-		if (rightProbability < 0) rightProbability = 0;
-		 */
-
 		detectGestures(outputScores);
 	}
 
@@ -211,7 +197,7 @@ public class MotionDetector {
 	private void detectGestures(float...prob) {
 		if (gestureStartTime == -1) {
 			// not recognized yet
-			if (getHighestProb(Prob) >= RISE_THRESHOLD && (SystemClock.elapsedRealtimeNanos() - gesturePreviousTime) / 1000 > GESTURES_DELAY_TIME_MS) {
+			if (getHighestProb(prob) >= RISE_THRESHOLD && (SystemClock.elapsedRealtimeNanos() - gesturePreviousTime) / 1000 > GESTURES_DELAY_TIME_MS) {
 				gestureStartTime = SystemClock.elapsedRealtimeNanos();
 				gestureType = getGestureType(prob);
 			}
