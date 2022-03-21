@@ -36,7 +36,7 @@ public class MotionDetector {
 	private static final String INPUT_NODE = "x_input";
 	private static final String OUTPUT_NODE = "labels_output";
 	private static final String[] OUTPUT_NODES = new String[]{OUTPUT_NODE};
-	private static final int NUM_CHANNELS = 2;
+	private static final int NUM_CHANNELS = 3;
 	private static final long[] INPUT_SIZE = {1, GESTURE_SAMPLES, NUM_CHANNELS};
 	private static final String[] labels = new String[]{"Forward", "Left", "Right", "Around"};
 
@@ -142,7 +142,7 @@ public class MotionDetector {
 			synchronized (recordingData) {
 				recordingData[dataPos++] = event.values[0] / DATA_NORMALIZATION_COEF;
 				recordingData[dataPos++] = event.values[1] / DATA_NORMALIZATION_COEF;
-				//recordingData[dataPos++] = event.values[2] / DATA_NORMALIZATION_COEF;
+				recordingData[dataPos++] = event.values[2] / DATA_NORMALIZATION_COEF;
 				if (dataPos >= recordingData.length) {
 					dataPos = 0;
 				}
@@ -202,11 +202,12 @@ public class MotionDetector {
 		detectGestures(outputScores);
 	}
 
-	private static final float RISE_THRESHOLD = 0.99f;
+	private static final float RISE_THRESHOLD = 0.95f;
 	private static final float FALL_THRESHOLD = 0.90f;
 	private static final long MIN_GESTURE_TIME_MS = 400000; // 0.4 sec - the minimum duration of recognized positive signal to be treated as a gesture
-	//private static final long GESTURES_DELAY_TIME_MS = 1000000; // 1.0 sec - minimum delay between two gestures
+	private static final long GESTURES_DELAY_TIME_MS = 2000000; // 2.0 sec - minimum delay between two gestures
 	private long gestureStartTime = -1;
+	private long gesturePreviousTime = 0;
 	private GestureType gestureType = null;
 	private boolean gestureRecognized = false;
 
@@ -214,7 +215,7 @@ public class MotionDetector {
 	private void detectGestures(float Prob[]) {
 		if (gestureStartTime == -1) {
 			// not recognized yet
-			if (getHighestProb(Prob) >= RISE_THRESHOLD) {
+			if (getHighestProb(Prob) >= RISE_THRESHOLD && (SystemClock.elapsedRealtimeNanos() - gesturePreviousTime) / 1000 > GESTURES_DELAY_TIME_MS) {
 				gestureStartTime = SystemClock.elapsedRealtimeNanos();
 				gestureType = getGestureType(Prob);
 			}
@@ -234,6 +235,10 @@ public class MotionDetector {
 					if (gestureTimeMs > MIN_GESTURE_TIME_MS) {
 						gestureRecognized = true;
 						callListener(gestureType, outputScores);
+						gestureStartTime = -1;
+						gestureType = null;
+						gestureRecognized = false;
+						gesturePreviousTime = SystemClock.elapsedRealtimeNanos();
 					}
 				}
 			}
@@ -261,8 +266,8 @@ public class MotionDetector {
 	private static GestureType getGestureType(float Prob[]) {
 		float maxProb = getHighestProb(Prob);
 		if (maxProb == Prob[0]) return GestureType.MoveForward;
-		if (maxProb == Prob[1]) return GestureType.MoveLeft;
-		if (maxProb == Prob[2]) return GestureType.MoveRight;
+		if (maxProb == Prob[1]) return GestureType.MoveRight;
+		if (maxProb == Prob[2]) return GestureType.MoveLeft;
 		return GestureType.MoveAround;
 	}
 
@@ -276,7 +281,7 @@ public class MotionDetector {
 				if (i - j * NUM_CHANNELS < 0) continue;
 				output[i + 0] += input[i + 0 - j * NUM_CHANNELS] * ir;
 				output[i + 1] += input[i + 1 - j * NUM_CHANNELS] * ir;
-				//output[i + 2] += input[i + 2 - j * NUM_CHANNELS] * ir;
+				output[i + 2] += input[i + 2 - j * NUM_CHANNELS] * ir;
 			}
 		}
 	}
